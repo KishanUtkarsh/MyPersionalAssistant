@@ -6,7 +6,7 @@ class system_shutdown_restart:
         restart.self  = restart
         abort_shutdown.self = abort_shutdown
         hibernate.self = hibernate
-
+#hello
     def shutdown(self , shutdown = True):
         os.getcwd("C:\WINDOWS\system32>")
         os.system("shutdown /s",shell = True)
