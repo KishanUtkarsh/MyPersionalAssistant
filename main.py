@@ -1,7 +1,7 @@
 import webbrowser as wb
 import speech_recognition as sr
 import datetime
-
+import system_shutdown_restart as ssr
 
 A = sr.Recognizer()
 A1 = sr.Recognizer()
@@ -76,10 +76,21 @@ try:
         print("speak searching plateform:")
         print("speak now:")
         print(datetime.datetime.now())
-        audio = A.listen(source,timeout=10, phrase_time_limit=2)
+        audio = A.listen(source,timeout=10 )
         print(datetime.datetime.now())
         x = A.recognize_google(audio)
         print(x)
 except (KeyboardInterrupt):
     print("Exiting...")
+
+if (x == "shutdown"):
+    ssr.shutdown()
+if (x == "restart"):
+    ssr.restart()
+if (x == "hibernate"):
+    ssr.hibernate()
+if (("about" in x.splite() or "abort" in x.split()) and x = "shutdown" ):
+    ssr.abort_shutdown()
+
+
 VoiceRecognition(x)
