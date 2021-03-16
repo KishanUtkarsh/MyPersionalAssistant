@@ -3,6 +3,7 @@ import speech_recognition as sr
 import datetime
 import system_shutdown_restart as ssr
 
+
 A = sr.Recognizer()
 A1 = sr.Recognizer()
 
@@ -83,14 +84,13 @@ try:
 except (KeyboardInterrupt):
     print("Exiting...")
 
-if (x == "shutdown"):
-    ssr.shutdown()
-if (x == "restart"):
-    ssr.restart()
-if (x == "hibernate"):
-    ssr.hibernate()
-if (("about" in x.splite() or "abort" in x.split()) and x = "shutdown" ):
-    ssr.abort_shutdown()
-
-
+y = x.split()
+if x == "shutdown":
+    ssr.shutdown(self=True)
+if x == "restart":
+    ssr.restart(self=True)
+if x == "hibernate":
+    ssr.hibernate(self=True)
+if "about" in y or "abort" in y:
+    ssr.abort_shutdown(self=True)
 VoiceRecognition(x)
